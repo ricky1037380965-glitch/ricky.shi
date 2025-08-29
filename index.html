@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERTU 环球顶级私人旅行定制服务 | 奢华旅行体验</title>
+    <link rel="stylesheet" href="travel-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='10' y='40' font-family='Playfair Display' font-size='24' font-weight='700' fill='%23000'%3EVERTU%3C/text%3E%3C/svg%3E" alt="VERTU">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#destinations">目的地</a></li>
+                <li><a href="#experience">体验</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="hero">
+        <div class="hero-video">
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">环球顶级私人旅行定制</h1>
+            <p class="hero-subtitle">专属旅行艺术家 · 无与伦比的奢华体验</p>
+            <p class="hero-description">
+                旅行不仅仅是空间的转换，更是身心的释放与灵魂的触及。VERTU凭借遍布全球的独家资源和顶级合作伙伴网络，
+                为您量身打造从规划到执行、从启程到归来的每一个细节，让每一次旅程都成为终生难忘的非凡体验。
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">定制专属旅程</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('services')">探索服务</button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">全球目的地</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">专属服务</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">定制化体验</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务特色 -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">顶级定制服务</h2>
+            <div class="services-grid">
+                <div class="service-card luxury">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>极致奢华度假</h3>
+                    <p>全球顶级私人岛屿、奢华度假别墅、专属海滩、私人泳池，为您打造无与伦比的私密奢华体验。</p>
+                    <ul class="service-features">
+                        <li>私人岛屿度假村</li>
+                        <li>六星级酒店套房</li>
+                        <li>专属海滩别墅</li>
+                        <li>私人管家服务</li>
+                    </ul>
+                </div>
+                <div class="service-card culture">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>文化艺术深度之旅</h3>
+                    <p>欧洲古堡巡礼、亚洲文明探索、艺术品鉴赏之旅，与当地艺术家深度互动，体验文化精髓。</p>
+                    <ul class="service-features">
+                        <li>私人博物馆导览</li>
+                        <li>艺术家工作室访问</li>
+                        <li>古迹专家讲解</li>
+                        <li>文化沉浸体验</li>
+                    </ul>
+                </div>
+                <div class="service-card adventure">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.828 14.828L21 21M16.5 10.5C16.5 13.8137 13.8137 16.5 10.5 16.5C7.18629 16.5 4.5 13.8137 4.5 10.5C4.5 7.18629 7.18629 4.5 10.5 4.5C13.8137 4.5 16.5 7.18629 16.5 10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>自然探险与极限挑战</h3>
+                    <p>极地探险、深海潜水、高山攀登、非洲狩猎等，配备专业团队与全方位安全保障。</p>
+                    <ul class="service-features">
+                        <li>极地科考探险</li>
+                        <li>深海潜水体验</li>
+                        <li>高山攀登挑战</li>
+                        <li>野生动物观察</li>
+                    </ul>
+                </div>
+                <div class="service-card exclusive">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>私人飞机游艇专属体验</h3>
+                    <p>协调预订各类私人飞机和豪华游艇，提供专属飞行路线和定制船上服务，享受极致便利。</p>
+                    <ul class="service-features">
+                        <li>私人飞机包机</li>
+                        <li>豪华游艇租赁</li>
+                        <li>专属航线定制</li>
+                        <li>机上/船上定制服务</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 目的地展示 -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <h2 class="section-title">精选目的地</h2>
+            <div class="destinations-grid">
+                <div class="destination-card" data-destination="maldives">
+                    <div class="destination-image">
+                        <div class="destination-overlay">
+                            <h3>马尔代夫私人岛屿</h3>
+                            <p>极致奢华的水上别墅体验</p>
+                            <button class="btn btn-outline">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card" data-destination="tuscany">
+                    <div class="destination-image">
+                        <div class="destination-overlay">
+                            <h3>托斯卡纳酒庄之旅</h3>
+                            <p>意大利文艺复兴艺术与美食</p>
+                            <button class="btn btn-outline">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card" data-destination="antarctica">
+                    <div class="destination-image">
+                        <div class="destination-overlay">
+                            <h3>南极探险之旅</h3>
+                            <p>世界尽头的极地奇观</p>
+                            <button class="btn btn-outline">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card" data-destination="kyoto">
+                    <div class="destination-image">
+                        <div class="destination-overlay">
+                            <h3>京都文化深度体验</h3>
+                            <p>千年古都的禅意与美学</p>
+                            <button class="btn btn-outline">了解详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 体验流程 -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">专属定制流程</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <h3>深度需求分析</h3>
+                        <p>专属旅行顾问深入了解您的旅行偏好、目的地愿望、同行人员、时间安排及对私密性、奢华度的具体要求。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <h3>全球资源整合</h3>
+                        <p>整合全球最顶级的私人飞机、豪华游艇、六星级酒店、米其林餐厅、私人导游等独家资源。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <h3>定制行程设计</h3>
+                        <p>依据您的兴趣设计独一无二的旅行主题和行程，包括奢华度假、文化艺术、自然探险等多元体验。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content">
+                        <h3>无忧管家服务</h3>
+                        <p>提供签证办理、行李打包、医疗协助、专属安保、当地交通等全方位管家式服务，确保旅程完美无瑕。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户案例 -->
+    <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-content">
+                <h2>客户专属体验</h2>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <h3>意大利文艺复兴艺术与美食品鉴之旅</h3>
+                        <p>"VERTU为我们定制的周年庆旅行超出了所有期待。从私人飞机直飞佛罗伦萨，到入住历史悠久的豪华庄园酒店，每一个细节都体现了极致的用心。私人导游的专业讲解让我们深度体验了乌菲兹美术馆的艺术瑰宝，在托斯卡纳葡萄园的私家酒窖晚宴更是难忘的浪漫时光。这不仅是一次旅行，更是一次心灵的洗礼。"</p>
+                        <div class="testimonial-author">
+                            <span class="author-name">— 陈先生夫妇</span>
+                            <span class="author-title">企业家 · 艺术收藏家</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-images">
+                        <div class="image-grid">
+                            <div class="image-item">
+                                <img src="case-image-1.svg" alt="新疆喀纳斯湖秋色" class="case-image">
+                            </div>
+                            <div class="image-item">
+                                <img src="case-image-2.svg" alt="摩洛哥撒哈拉沙漠探险" class="case-image">
+                            </div>
+                            <div class="image-item">
+                                <img src="case-image-3.svg" alt="马尔代夫私人岛屿度假" class="case-image">
+                            </div>
+                            <div class="image-item testimonial-logo">
+                                <div class="vertu-logo">
+                                    <span>VERTU</span>
+                                    <p>奢华旅行定制</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系预约 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>开启您的环球梦想之旅</h2>
+                    <p>让VERTU的专属旅行艺术家为您打造独一无二的奢华旅行体验，每一次出行都是一场精心编排的人生华章。</p>
+                    <div class="contact-features">
+                        <div class="feature">
+                            <span class="feature-icon">✈</span>
+                            <span>全球私人飞机网络</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🛥</span>
+                            <span>豪华游艇专属体验</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🏰</span>
+                            <span>顶级酒店独家资源</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">👨‍💼</span>
+                            <span>24/7专属旅行顾问</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="travelForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="联系电话" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="电子邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="travelType" name="travelType" required>
+                                <option value="">选择旅行类型</option>
+                                <option value="luxury">极致奢华度假</option>
+                                <option value="culture">文化艺术深度之旅</option>
+                                <option value="adventure">自然探险与极限挑战</option>
+                                <option value="exclusive">私人飞机游艇体验</option>
+                                <option value="custom">完全定制化旅程</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select id="destination" name="destination" required>
+                                <option value="">首选目的地</option>
+                                <option value="europe">欧洲（法国、意大利、瑞士等）</option>
+                                <option value="asia">亚洲（日本、泰国、马尔代夫等）</option>
+                                <option value="americas">美洲（美国、加拿大、巴西等）</option>
+                                <option value="africa">非洲（南非、肯尼亚、摩洛哥等）</option>
+                                <option value="oceania">大洋洲（澳大利亚、新西兰等）</option>
+                                <option value="polar">极地（南极、北极）</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="budget" name="budget" placeholder="预算范围（可选）">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="requirements" name="requirements" placeholder="请详细描述您的旅行需求、偏好和特殊要求" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">提交定制需求</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='10' y='40' font-family='Playfair Display' font-size='24' font-weight='700' fill='%23fff'%3EVERTU%3C/text%3E%3C/svg%3E" alt="VERTU">
+                    <p>环球顶级私人旅行定制专家</p>
+                </div>
+                <div class="footer-links">
+                    <h4>旅行服务</h4>
+                    <ul>
+                        <li><a href="#">极致奢华度假</a></li>
+                        <li><a href="#">文化艺术之旅</a></li>
+                        <li><a href="#">自然探险挑战</a></li>
+                        <li><a href="#">私人飞机游艇</a></li>
+                        <li><a href="#">完全定制旅程</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系我们</h4>
+                    <p>专属热线：400-VERTU-88</p>
+                    <p>邮箱：travel@vertu.com</p>
+                    <p>服务时间：24/7全球服务</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 VERTU. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="travel-script.js"></script>
+</body>
+</html>
