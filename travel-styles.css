@@ -1,0 +1,989 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-logo img {
+    height: 40px;
+    filter: invert(1);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: #d4af37;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f4e4a6);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* 英雄区域 */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.7) 0%, 
+        rgba(212, 175, 55, 0.1) 50%, 
+        rgba(0, 0, 0, 0.8) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23000"/><stop offset="50%" stop-color="%231a1a1a"/><stop offset="100%" stop-color="%23000"/></linearGradient></defs><rect width="1920" height="1080" fill="url(%23bg)"/><circle cx="300" cy="200" r="2" fill="%23d4af37" opacity="0.3"/><circle cx="800" cy="400" r="1.5" fill="%23f4e4a6" opacity="0.4"/><circle cx="1200" cy="300" r="2.5" fill="%23d4af37" opacity="0.2"/><circle cx="1600" cy="600" r="1" fill="%23f4e4a6" opacity="0.5"/></svg>') center/cover;
+    z-index: -1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 100px 20px 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #fff 0%, #d4af37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+    100% { text-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 50px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.btn {
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+    color: #000;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(212, 175, 55, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #d4af37;
+}
+
+.btn-secondary:hover {
+    background: #d4af37;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 12px 24px;
+    font-size: 0.9rem;
+}
+
+.btn-outline:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: #d4af37;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    color: #fff;
+}
+
+.stat-number {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+/* 服务特色 */
+.services {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 80px;
+    color: #000;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4af37, #f4e4a6);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 50px 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 35px 100px rgba(0, 0, 0, 0.15);
+    border-color: #d4af37;
+}
+
+.service-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    position: relative;
+    z-index: 2;
+}
+
+.service-icon svg {
+    width: 50px;
+    height: 50px;
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.service-features {
+    list-style: none;
+    text-align: left;
+}
+
+.service-features li {
+    color: #888;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+/* 目的地展示 */
+.destinations {
+    padding: 120px 0;
+    background: #000;
+}
+
+.destinations .section-title {
+    color: #fff;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.destination-card {
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.destination-card:hover {
+    transform: scale(1.05);
+}
+
+.destination-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.destination-card[data-destination="maldives"] .destination-image {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%2300bcd4"/><circle cx="200" cy="150" r="50" fill="%23fff" opacity="0.8"/><text x="200" y="160" text-anchor="middle" fill="%23fff" font-size="16">马尔代夫</text></svg>');
+}
+
+.destination-card[data-destination="tuscany"] .destination-image {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%238bc34a"/><rect x="150" y="100" width="100" height="100" fill="%23795548" opacity="0.8"/><text x="200" y="160" text-anchor="middle" fill="%23fff" font-size="16">托斯卡纳</text></svg>');
+}
+
+.destination-card[data-destination="antarctica"] .destination-image {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23e3f2fd"/><polygon points="200,50 250,150 150,150" fill="%23fff" opacity="0.9"/><text x="200" y="200" text-anchor="middle" fill="%23333" font-size="16">南极</text></svg>');
+}
+
+.destination-card[data-destination="kyoto"] .destination-image {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f44336"/><rect x="180" y="80" width="40" height="140" fill="%23fff" opacity="0.8"/><text x="200" y="250" text-anchor="middle" fill="%23fff" font-size="16">京都</text></svg>');
+}
+
+.destination-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: #fff;
+    padding: 40px 30px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.destination-card:hover .destination-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.destination-overlay h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.destination-overlay p {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+/* 体验流程 */
+.experience {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+}
+
+.experience .section-title {
+    color: #000;
+}
+
+.experience-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #d4af37 0%, #f4e4a6 100%);
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-number {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4a6 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 0 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+}
+
+.timeline-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* 客户案例 */
+.testimonial {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+}
+
+.testimonial h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.testimonial-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 60px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.testimonial-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 25px;
+}
+
+.testimonial-text p {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.author-name {
+    color: #fff;
+    font-weight: 600;
+}
+
+.author-title {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.image-item {
+    height: 120px;
+    background: linear-gradient(45deg, #d4af37, #f4e4a6);
+    border-radius: 15px;
+    opacity: 0.8;
+    overflow: hidden;
+    position: relative;
+}
+
+.case-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.image-item:hover .case-image {
+    transform: scale(1.05);
+}
+
+.testimonial-logo {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #d4af37;
+}
+
+.vertu-logo {
+    text-align: center;
+    color: #fff;
+}
+
+.vertu-logo span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #d4af37;
+    display: block;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.vertu-logo p {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* 联系预约 */
+.contact {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+.contact-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 18px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+}
+
+.form-group select option {
+    background: #000;
+    color: #fff;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+/* 页脚 */
+.footer {
+    background: #000;
+    color: #fff;
+    padding: 80px 0 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+
+.footer-logo img {
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.footer-logo p {
+    color: #ccc;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    color: #d4af37;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+}
+
+.footer-contact p {
+    color: #ccc;
+    margin-bottom: 12px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 40px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destinations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        flex-direction: row !important;
+        padding-left: 80px;
+    }
+
+    .timeline-number {
+        position: absolute;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .timeline-content {
+        margin: 0;
+    }
+
+    .testimonial-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 30px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-features {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .service-card {
+        padding: 40px 25px;
+    }
+
+    .contact-form {
+        padding: 30px 25px;
+    }
+
+    .timeline-item {
+        padding-left: 70px;
+    }
+
+    .timeline-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+
+/* 滚动动画 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4af37 0%, #f4e4a6 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #f4e4a6 0%, #d4af37 100%);
+}
+
+/* 特殊效果 */
+.luxury {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.culture {
+    background: linear-gradient(135deg, rgba(156, 39, 176, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.adventure {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
+
+.exclusive {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.05) 0%, rgba(255, 255, 255, 1) 100%);
+}
